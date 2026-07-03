@@ -1,0 +1,27 @@
+name: Daily News Digest
+
+on:
+  schedule:
+    # 11:00 UTC = 7:00 AM Eastern (Daylight Time) / 6:00 AM Eastern (Standard Time)
+    - cron: "0 11 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  send-digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r news_digest/requirements.txt
+
+      - name: Send digest
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          DIGEST_TO_EMAIL: ${{ secrets.DIGEST_TO_EMAIL }}
+        run: python news_digest/digest.py
