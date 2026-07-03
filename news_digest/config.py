@@ -11,12 +11,12 @@ FEEDS = {
         ("NPR National", "https://feeds.npr.org/1003/rss.xml"),
     ],
     "Michigan": [
-        ("Michigan Public (NPR)", "https://www.michiganpublic.org/rss.xml"),
-        ("Detroit Free Press", "https://www.freep.com/arc/outboundfeeds/rss/category/news/?outputType=xml"),
+        ("Bridge Michigan", "https://www.bridgemi.com/feed"),
+        ("MLive Michigan News", "https://www.mlive.com/arc/outboundfeeds/rss/category/news/?outputType=xml"),
     ],
     "Flint / Swartz Creek": [
         ("MLive Flint", "https://www.mlive.com/arc/outboundfeeds/rss/category/flint-news/?outputType=xml"),
-        ("ABC12 WJRT Flint", "https://www.abc12.com/arc/outboundfeeds/rss/category/news/?outputType=xml"),
+        ("Flint Beat", "https://flintbeat.com/feed/"),
     ],
 }
 
